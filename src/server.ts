@@ -1,7 +1,8 @@
 import express from "express";
 import {authMiddleware} from "./gateway/middleware/auth";
-import {planResolver} from "./gateway/middleware/planResolver.ts";
+import {planResolver} from "./gateway/middleware/planResolver";
 import {burstLimiter} from "./gateway/middleware/burst";
+import {rateLimiter} from "./gateway/middleware/rate"
 
 const app = express();
 
@@ -32,11 +33,21 @@ app.get('/health',(req,res)=>{
 //   }
 // );
 
+// app.get(
+//   "/auth/protected",
+//   authMiddleware,
+//   planResolver,
+//   burstLimiter,
+//   (req, res) => {
+//     res.json({ ok: true });
+//   }
+// );
+
 app.get(
   "/auth/protected",
   authMiddleware,
   planResolver,
-  burstLimiter,
+  rateLimiter,
   (req, res) => {
     res.json({ ok: true });
   }
