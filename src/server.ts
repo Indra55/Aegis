@@ -1,6 +1,7 @@
 import express from "express";
 import {authMiddleware} from "./gateway/middleware/auth";
-import {planResolver} from "./gateway/middleware/planResolver.ts"
+import {planResolver} from "./gateway/middleware/planResolver.ts";
+import {burstLimiter} from "./gateway/middleware/burst";
 
 const app = express();
 
@@ -20,13 +21,23 @@ app.get('/health',(req,res)=>{
 //   console.log("auth ping!")
 // });
 //
+// app.get(
+//   "/auth/protected",
+//   authMiddleware,
+//   planResolver,
+//   (req, res) => {
+//     res.json({
+//       context: req.context
+//     });
+//   }
+// );
+
 app.get(
   "/auth/protected",
   authMiddleware,
   planResolver,
+  burstLimiter,
   (req, res) => {
-    res.json({
-      context: req.context
-    });
+    res.json({ ok: true });
   }
 );
