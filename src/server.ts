@@ -3,6 +3,7 @@ import {authMiddleware} from "./gateway/middleware/auth";
 import {planResolver} from "./gateway/middleware/planResolver";
 import {burstLimiter} from "./gateway/middleware/burst";
 import {rateLimiter} from "./gateway/middleware/rate"
+import {quotaEnforcer} from "./gateway/middleware/quota";
 
 const app = express();
 
@@ -43,11 +44,24 @@ app.get('/health',(req,res)=>{
 //   }
 // );
 
+// app.get(
+//   "/auth/protected",
+//   authMiddleware,
+//   planResolver,
+//   burstLimiter,
+//   rateLimiter,
+//   (req, res) => {
+//     res.json({ ok: true });
+//   }
+// );
+
 app.get(
   "/auth/protected",
   authMiddleware,
   planResolver,
+  burstLimiter,
   rateLimiter,
+  quotaEnforcer,
   (req, res) => {
     res.json({ ok: true });
   }
