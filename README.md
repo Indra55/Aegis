@@ -589,7 +589,7 @@ The gates are open to worthy contributors. Before you forge ahead:
 ```
 ╔═══════════════════════════════════════════════════════════════╗
 ║                                                               ║
-║   "Behind every great API, there stands a greater shield."   ║
+║   "Behind every great API, there stands a greater shield."    ║
 ║                                                               ║
 ║                        — The Aegis Codex                      ║
 ║                                                               ║
