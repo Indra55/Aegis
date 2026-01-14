@@ -1,4 +1,4 @@
-# ⚔️ AEGIS
+# AEGIS - Multi-Tenant API Gateway & Rate Limiting Syste
 
 ```
      ▄▄▄      ▓█████   ▄████  ██▓  ██████ 
