@@ -1,0 +1,163 @@
+{
+  "dashboardStats": [
+    {
+      "label": "REQUESTS/SEC",
+      "value": "12,450",
+      "description": "CURRENT THROUGHPUT",
+      "intent": "positive",
+      "icon": "gear",
+      "direction": "up"
+    },
+    {
+      "label": "BLOCKED REQUESTS",
+      "value": "312",
+      "description": "RATE LIMITED TENANTS",
+      "intent": "negative",
+      "icon": "proccesor",
+      "direction": "down"
+    },
+    {
+      "label": "GATEWAY UPTIME",
+      "value": "99.98%",
+      "description": "30 DAY AVERAGE",
+      "intent": "positive",
+      "icon": "boom",
+      "tag": "EXCELLENT"
+    }
+  ],
+  "chartData": {
+    "week": [
+      { "date": "Mon", "requests": 8500, "blocked": 42, "rateLimited": 180 },
+      { "date": "Tue", "requests": 9200, "blocked": 58, "rateLimited": 210 },
+      { "date": "Wed", "requests": 11200, "blocked": 72, "rateLimited": 280 },
+      { "date": "Thu", "requests": 10800, "blocked": 65, "rateLimited": 245 },
+      { "date": "Fri", "requests": 12100, "blocked": 88, "rateLimited": 320 },
+      { "date": "Sat", "requests": 7400, "blocked": 35, "rateLimited": 120 },
+      { "date": "Sun", "requests": 6800, "blocked": 28, "rateLimited": 95 }
+    ],
+    "month": [
+      { "date": "Week 1", "requests": 285000, "blocked": 1200, "rateLimited": 4500 },
+      { "date": "Week 2", "requests": 312000, "blocked": 1450, "rateLimited": 5200 },
+      { "date": "Week 3", "requests": 298000, "blocked": 1350, "rateLimited": 4800 },
+      { "date": "Week 4", "requests": 325000, "blocked": 1600, "rateLimited": 5800 }
+    ],
+    "year": [
+      { "date": "Jan", "requests": 12500000, "blocked": 45000, "rateLimited": 180000 },
+      { "date": "Feb", "requests": 11800000, "blocked": 42000, "rateLimited": 168000 },
+      { "date": "Mar", "requests": 13200000, "blocked": 48000, "rateLimited": 195000 },
+      { "date": "Apr", "requests": 12900000, "blocked": 46000, "rateLimited": 185000 },
+      { "date": "May", "requests": 14100000, "blocked": 52000, "rateLimited": 210000 },
+      { "date": "Jun", "requests": 13500000, "blocked": 49000, "rateLimited": 202000 },
+      { "date": "Jul", "requests": 15200000, "blocked": 58000, "rateLimited": 235000 },
+      { "date": "Aug", "requests": 14800000, "blocked": 55000, "rateLimited": 225000 },
+      { "date": "Sep", "requests": 13600000, "blocked": 50000, "rateLimited": 210000 },
+      { "date": "Oct", "requests": 14400000, "blocked": 52000, "rateLimited": 220000 },
+      { "date": "Nov", "requests": 15800000, "blocked": 62000, "rateLimited": 250000 },
+      { "date": "Dec", "requests": 16500000, "blocked": 68000, "rateLimited": 275000 }
+    ]
+  },
+  "gatewayMetrics": [
+    {
+      "id": 1,
+      "name": "TENANT_ALPHA",
+      "tenantId": "tenant_001",
+      "requestCount": 2450,
+      "blockedCount": 12,
+      "avatar": "/avatars/user_krimson.png",
+      "featured": true,
+      "status": "ACTIVE"
+    },
+    {
+      "id": 2,
+      "name": "TENANT_BETA",
+      "tenantId": "tenant_002",
+      "requestCount": 1880,
+      "blockedCount": 8,
+      "avatar": "/avatars/user_mati.png",
+      "status": "ACTIVE"
+    },
+    {
+      "id": 3,
+      "name": "TENANT_GAMMA",
+      "tenantId": "tenant_003",
+      "requestCount": 1650,
+      "blockedCount": 15,
+      "avatar": "/avatars/user_pek.png",
+      "status": "ACTIVE"
+    },
+    {
+      "id": 4,
+      "name": "TENANT_DELTA",
+      "tenantId": "tenant_004",
+      "requestCount": 985,
+      "blockedCount": 5,
+      "avatar": "/avatars/user_joyboy.png",
+      "status": "ACTIVE"
+    }
+  ],
+  "gatewayStatus": [
+    {
+      "title": "MIDDLEWARE STAGES",
+      "value": "5/5",
+      "status": "[OPERATIONAL]",
+      "variant": "success"
+    },
+    {
+      "title": "GATEWAY AVAILABILITY",
+      "value": "99.98%",
+      "status": "[ONLINE]",
+      "variant": "success"
+    },
+    {
+      "title": "ACTIVE TENANTS",
+      "value": "142",
+      "status": "[MONITORED]",
+      "variant": "success"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif-1",
+      "title": "RATE LIMIT TRIGGERED",
+      "message": "Tenant ALPHA has exceeded burst capacity. Requests are being throttled.",
+      "timestamp": "2024-07-10T13:39:00Z",
+      "type": "warning",
+      "read": false,
+      "priority": "high"
+    },
+    {
+      "id": "notif-2",
+      "title": "MIDDLEWARE UPDATE",
+      "message": "Auth Keeper middleware has been updated to version 2.1.0.",
+      "timestamp": "2024-07-10T13:35:00Z",
+      "type": "info",
+      "read": false,
+      "priority": "medium"
+    },
+    {
+      "id": "notif-3",
+      "title": "QUOTA WARNING",
+      "message": "Tenant GAMMA has used 85% of monthly quota. Contact for upgrade.",
+      "timestamp": "2024-07-10T12:15:00Z",
+      "type": "warning",
+      "read": true,
+      "priority": "medium"
+    },
+    {
+      "id": "notif-4",
+      "title": "GATEWAY HEALTH",
+      "message": "All 5 middleware stages are operating normally. Uptime: 99.98%.",
+      "timestamp": "2024-07-10T11:45:00Z",
+      "type": "success",
+      "read": true,
+      "priority": "low"
+    }
+  ],
+  "widgetData": {
+    "location": "Buenos Aires, Argentina",
+    "timezone": "UTC-3",
+    "temperature": "18°C",
+    "weather": "Partly Cloudy",
+    "date": "Wednesday, July 10th, 2025"
+  }
+}

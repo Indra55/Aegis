@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  redis:
+    image: redis:7
+    command: ["redis-server","--appendonly","yes"]
+
+
+  postgres:
+    image: postgres:18
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: quota
+      POSTGRES_PASSWORD: quota
+      POSTGRES_DB: quota_db
+      POSTGRES_HOST_AUTH_METHOD: trust
+
